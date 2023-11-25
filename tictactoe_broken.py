@@ -41,12 +41,15 @@ def check_winner(game):
     game_slices.append(down_diagonal)
     game_slices.append(up_diagonal)
 
+    winner = 0  # Initialize winner here
+
     for game_slice in game_slices:
         winner = check_row_winner(game_slice)
         if winner != 0:
             return winner
 
     return winner
+
 
 def start_game():
     return [[0, 0, 0] for x in range(3)]
@@ -75,7 +78,7 @@ def check_space_empty(game, row, column):
     return game[row][column] == 0
 
 def convert_input_to_coordinate(user_input):
-    return user_input - 1
+    return int(user_input) - 1
 
 def switch_player(player):
     if player == 1:
