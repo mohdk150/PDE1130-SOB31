@@ -23,7 +23,7 @@ print("Type exit at any prompt to exit.")
 
 while playing:
     user_guess = input("Give me your best guess!")
-    if user_guess="exit":
+    if user_guess=="exit":
         break
     cowbullcount = compare_numbers(number, user_guess)
     guesses+= 1
