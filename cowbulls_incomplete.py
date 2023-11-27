@@ -12,7 +12,7 @@ def compare_numbers(number, user_guess):
 
 playing = True  # gotta play the game
 number = str(random.randint(0, 9999))  # random 4 digit number
-guesses + 0
+guesses = 0
 
 print("Let's play a game of Cowbull!")  # explanation
 print("I will generate a number, and you have to guess the numbers one digit at a time.")
