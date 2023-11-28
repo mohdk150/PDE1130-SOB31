@@ -19,18 +19,22 @@
 # Grade: F
 # Student iis failing.
 
+#input for exam grades from the student
 exam_one = int(input("Input exam grade one: "))
 exam_two = int(input("Input exam grade two: "))
 exam_three = int(input("Input exam grade three: "))
 
+#creating a list to store exam grades
 grades = [exam_one, exam_two, exam_three]
 total = 0
 
+#calculate the total of the exam grades
 for grade in grades:
     total += grade
 
 avg = total / len(grades)
 
+#Determining the letter grade based on the average
 if avg >= 90:
     letter_grade = "A"
 elif avg >= 80 and avg < 90:
@@ -42,10 +46,12 @@ elif avg >= 60 and avg <70:
 else:
     letter_grade = "F"
 
+#Display the exam grades,Average, and Grade
 print("Exams:", grades)
 print("Average:", avg)
 print("Grade:", letter_grade)
 
+#Determine if the student is passing or failing
 if letter_grade == "F":
     print("Student is failing.")
 else:
