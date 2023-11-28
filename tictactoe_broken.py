@@ -3,16 +3,18 @@
 # Find the 4 errors in the code and fix them,
 # so the game works as expected.
 
+#Function to draw a line with specific width,edge,and filling
 def draw_line(width, edge, filling):
     print(filling.join([edge] * (width + 1)))
 
-
+#Function to display the winner of the game
 def display_winner(player):
     if player == 0:
         print("Tie")
     else:
         print("Player " + str(player) + " wins!")
 
+#Function for checking if the specifed row has the winner or not
 def check_row_winner(row):
     winner=0
     """
@@ -23,12 +25,14 @@ def check_row_winner(row):
         return row[0]
     return 0
 
+#Function to get the required column from the game board
 def get_col(game, col_number):
     return [game[x][col_number] for x in range(3)]
 
 def get_row(game, row_number):
     return game[row_number]
 
+#Checking if the game has a winner or not
 def check_winner(game):
     game_slices = []
     for index in range(3):
@@ -50,10 +54,11 @@ def check_winner(game):
 
     return winner
 
-
+#Function to initialize the game board
 def start_game():
     return [[0, 0, 0] for x in range(3)]
 
+#Function to display the present state of the game board
 def display_game(game):
     d = {2: "O", 1: "X", 0: "_"}
     draw_line(3, " ", "_")
@@ -63,7 +68,7 @@ def display_game(game):
             new_row.append(d[game[row_num][col_num]])
         print("|" + "|".join(new_row) + "|")
 
-
+#Function to add player pieces
 def add_piece(game, player, row, column):
     """
     game: game state
@@ -74,12 +79,14 @@ def add_piece(game, player, row, column):
     game[row][column] = player
     return game
 
+#Function for checking if the space on the gameboard is empty or not
 def check_space_empty(game, row, column):
     return game[row][column] == 0
 
 def convert_input_to_coordinate(user_input):
     return int(user_input) - 1
 
+#Function for switching the current player
 def switch_player(player):
     if player == 1:
         return 2
@@ -93,6 +100,7 @@ def moves_exist(game):
                 return True
     return False
 
+#Main function to run TicTacToe game
 if __name__ == '__main__':
     game = start_game()
     display_game(game)
@@ -110,4 +118,4 @@ if __name__ == '__main__':
         display_game(game)
         player = switch_player(player)
         winner = check_winner(game)
-    display_winner(winner)
+    display_winner(winner)       #Display the winner of the game
