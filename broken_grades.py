@@ -32,7 +32,7 @@ total = 0
 for grade in grades:
     total += grade
 
-avg = total / len(grades)
+avg = round(total / len(grades))
 
 #Determining the letter grade based on the average
 if avg >= 90:
